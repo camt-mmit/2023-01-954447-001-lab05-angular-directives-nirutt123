@@ -1,0 +1,22 @@
+<div class="section box">
+  <h2>Try Three</h2>
+  <button type="button" (click)="add()">Add</button>
+  <div class="cmp-input-list">
+    <div *ngFor="let item of items; let i = index" class="input-box">
+      <label>Input {{ i + 1 }}:</label>
+            <input
+          #elem
+          type="number"
+          [value]="item.value"
+          (change)="onChange(i, elem.valueAsNumber)"
+        />
+      <button type="button" (click)="delete(i)" class="btn-del">Delete</button>
+    </div>
+  </div>
+
+  <div class="input-box">
+    <label>Result :</label>
+    <output>{{ getResult() }}</output>
+  </div>
+
+</div>

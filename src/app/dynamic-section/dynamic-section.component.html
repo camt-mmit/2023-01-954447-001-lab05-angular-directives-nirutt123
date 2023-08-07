@@ -1,0 +1,19 @@
+<div class="section box">
+  <button type="button" (click)="addSec()">
+    <i class='bx bx-calendar-plus' ></i>Add Section
+  </button>
+  <section *ngFor="let item of items; let i = index">
+    <div class="section-list">
+      <h2>Section {{ i + 1 }}</h2>
+      <button
+        type="button"
+        (click)="deleteSec(i)"
+        class="btn-del"
+        [disabled]="isDisabled"
+      >
+      <i class='bx bx-calendar-minus' ></i>Remove Section
+      </button>
+    </div>
+    <app-dynamic-input> </app-dynamic-input>
+  </section>
+</div>

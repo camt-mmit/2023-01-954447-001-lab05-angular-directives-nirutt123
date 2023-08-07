@@ -1,0 +1,29 @@
+<button type="button" (click)="add()" class="input-add">
+  <i class='bx bx-list-plus'></i>Add Input
+</button>
+<br />
+<div class="input-list">
+  <div *ngFor="let item of items; let i = index" class="input-box">
+      <label class="input-title">Input {{ i + 1 }} : </label>
+      <input
+        #elem
+        type="number"
+        [value]="item.value"
+        (change)="onChange(i, elem.valueAsNumber)"
+      />
+    <button
+      type="button"
+      (click)="delete(i)"
+      class="btn-del"
+      [disabled]="isDisabled"
+    >
+    <i class='bx bx-list-minus' ></i> Remove Input
+    </button>
+  </div>
+</div>
+<div>
+  <div class="input-box">
+    <label>Result :</label>
+    <output>{{ getResult() }}</output>
+  </div>
+</div>

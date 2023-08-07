@@ -1,0 +1,13 @@
+<div class="section box">
+  <h2>Try One</h2>
+<div *ngFor="let value of items; let i = index" class="input-box">
+  <input
+    #elem
+    type="number"
+    [value]="value"
+    (change)="onChange(i, elem.valueAsNumber)"
+  />
+</div>
+<output>{{ items.join(",") }}</output>
+
+</div>
